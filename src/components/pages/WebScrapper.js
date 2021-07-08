@@ -1,11 +1,28 @@
 import React from 'react';
 import { useState } from 'react';
 import { Fragment } from 'react';
-import { ReactDOM } from 'react';
 
 
 
-const AddedElement = () => <p><input placeholder='text box' /></p>
+const AddedElement = () => {
+const [count, setCount] = useState(0)
+    return(
+    <>
+    <p>
+    <div style={{border: '1px solid red', alignItems: 'Center', padding: '5px'}}>
+    <input placeholder='Category Name'/>
+    <p></p>
+    <input placeholder='Selector'/>
+    <p></p>
+    <Fragment>
+    <button onClick={() => setCount(count + 1)}>Add SubCategory</button>
+    { [...Array(count)].map((_, i) => <AddedElement key={i} />) }
+    </Fragment>
+    </div>
+    </p>
+    </>
+    )
+}
 const WebScrapper = () => {
 
 const [count, setCount] = useState(0)
