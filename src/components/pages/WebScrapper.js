@@ -9,20 +9,24 @@ const [count, setCount] = useState(0)
     return(
     <>
     <p>
-    <div style={{border: '1px solid red', alignItems: 'Center', padding: '5px'}}>
+    <div style={{border: '2px solid #00A300', alignItems: 'Center', padding: '10px', background: '#132e9c'}}>
     <input placeholder='Category Name'/>
     <p></p>
     <input placeholder='Selector'/>
     <p></p>
+    <div>
     <Fragment>
     <button onClick={() => setCount(count + 1)}>Add SubCategory</button>
     { [...Array(count)].map((_, i) => <AddedElement key={i} />) }
     </Fragment>
     </div>
+    </div>
     </p>
     </>
     )
 }
+
+
 const WebScrapper = () => {
 
 const [count, setCount] = useState(0)
@@ -46,14 +50,16 @@ const [count, setCount] = useState(0)
         height: '2.5vh'
       }}>
       <label>
-        URL:
-        <input type="text" name="url" placeholder='URL' />
+        Address url:
+        <input type="text" name="url" placeholder='www.example.com' />
       </label>
       <input type="submit" value="Start Scrapping" />
+      <div>
       <Fragment>
     <button onClick={() => setCount(count + 1)}>Add Category</button>
     { [...Array(count)].map((_, i) => <AddedElement key={i} />) }
       </Fragment>
+      </div>
     </div>
   </>
   );
